@@ -1,6 +1,6 @@
 
-public class TrackingRow {
-	Range r;
+public class TrackingRow implements Comparable <TrackingRow>{
+	public Range r;
 	int s;
 	int t;
 	boolean notDeleted;
@@ -12,6 +12,22 @@ public class TrackingRow {
 		notDeleted = true;
 	}
 	
+	public String toString() {
+		return " " + this.r.getLo()+ " "+ this.r.getHi()+ " " + this.s+ " " + this.t;
+	}
 	
+	public boolean isValid() {
+		return this.r.isValid();
+	}
+	
+	public void delete() {
+		this.notDeleted = false;
+	}
+
+	@Override
+	public int compareTo(TrackingRow tr) {
+		return Integer.valueOf(this.r.getLo()).compareTo(tr.r.getLo());
+	}
 
 }
+

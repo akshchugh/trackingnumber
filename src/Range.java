@@ -48,4 +48,13 @@ public class Range {
     	this.lo = lo;
     	this.hi = hi;
     }
+    public int getLo() {
+    	return this.lo;
+    }
+    public int getHi() {
+    	return this.hi;
+    }
+    public boolean isValid() {
+    	return (this.hi >= this.lo && this.lo >=0);
+    }
 }
