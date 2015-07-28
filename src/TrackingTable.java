@@ -6,7 +6,7 @@ import java.util.TreeSet;
 public class TrackingTable {
 	SortedSet <TrackingRow> table;
 	public void insert(TrackingRow tr) {
-		SortedSet <TrackingRow> newTable = new TreeSet <TrackingRow> ();
+		TreeSet <TrackingRow> newTable = new TreeSet <TrackingRow> ();
 		for(TrackingRow oldRow: table) {
 			if (oldRow.r.isOverlapping(tr.r)) {
 				TrackingRow beforeIntersection = new TrackingRow (oldRow.r.getLo(), tr.r.getLo() - 1, oldRow.s, oldRow.t);
