@@ -29,5 +29,8 @@ public class TrackingRow implements Comparable <TrackingRow>{
 		return Integer.valueOf(this.r.getLo()).compareTo(tr.r.getLo());
 	}
 
+	boolean isOverlapping( TrackingRow row ) {
+		return this.r.isOverlapping( row.r );
+	}
 }
 
