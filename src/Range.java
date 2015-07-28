@@ -48,6 +48,13 @@ public class Range {
     	this.lo = lo;
     	this.hi = hi;
     }
+    public Range union(Range r) {
+    	if(this.lessThan(r)) {
+    		return new Range(this.lo, r.getHi());
+    	}
+    	else
+    		return new Range(r.getLo(), this.hi);
+    }
     public int getLo() {
     	return this.lo;
     }
@@ -56,5 +63,8 @@ public class Range {
     }
     public boolean isValid() {
     	return (this.hi >= this.lo && this.lo >=0);
+    }
+    public boolean isAdjacent(Range r) {
+    	return (this.lo == r.hi + 1 || this.hi == r.lo - 1);
     }
 }
