@@ -4,8 +4,8 @@
  * ----------------------------------------------------*/
 public class Range {
 
-    protected int lo;
-    protected int hi;
+    private int lo;
+    private int hi;
 
     public boolean contains(int x) {
         return this.lo <= x && x <= this.hi;
